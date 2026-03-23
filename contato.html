@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - ZooNak</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/contato.css">
+    <link rel="shortcut icon" href="img/zoo2.ico" type="image/x-icon">
+</head>
+
+<body class="templatemo-bg-image-2">
+
+    <a href="index.html" class="btn-home"><i class="fa fa-arrow-left"></i> Voltar para o Início</a>
+
+    <div class="container main-contact-container">
+        <div class="row align-items-center bg-white-box">
+            
+            <div class="col-lg-6 p-4">
+                <form class="templatemo-contact-form-1" role="form" action="#" method="post">
+                    <h2 class="text-center mb-4 contact-title">Envie uma Mensagem</h2>
+                    
+                    <div class="form-group">
+                        <label for="name" class="control-label">Nome *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="control-label">E-mail *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="control-label">Assunto *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-info-circle"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="subject" placeholder="Qual o assunto?" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="control-label">Mensagem *</label>
+                        <textarea rows="5" class="form-control" id="message" placeholder="Sua mensagem aqui..." required></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-4">
+                        <input type="checkbox" class="form-check-input" id="copyMail">
+                        <label class="form-check-label" for="copyMail" style="margin-left: 5px;">Enviar uma cópia para meu e-mail.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success btn-block custom-btn w-100">Enviar mensagem</button>
+                </form>
+            </div>
+            
+            <div class="col-lg-6 p-0 map-container">
+                <iframe src="https://maps.google.com/maps?q=Zool%C3%B3gico%20de%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; min-height: 500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

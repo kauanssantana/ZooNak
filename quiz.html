@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Teste Seus Conhecimentos</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="shortcut icon" href="img/zoo2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="mail">Página inicial</a></li>
+                <li><a href="contato.html" class="mail">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div id="form-box">
+            <form>
+                <select id="biome">
+                    <option value="AMAZONIA" selected="selected">Amazônia</option>
+                    <option value="PANTANAL">Pantanal</option>
+                    <option value="CERRADO">Cerrado</option>
+                    <option value="CAATINGA">Caatinga</option>
+                    <option value="MATA_ATLANTICA">Mata Atlântica</option>
+                    <option value="PAMPA">Pampa</option>
+                </select>
+                <a href="#lb3" class="choose-lang">Testar Conhecimentos</a>
+            </form>
+        </div>
+    </div>
+
+    <div class="quiz">
+        <div id="info">
+            <div id="score">Pontuação: 0</div>
+            <div id="ques-left">Pergunta: 1/20</div>
+            <button id="exit-quiz" class="exit-btn" title="Voltar para o Início">
+                <i class="fa fa-home"></i>
+            </button>
+        </div>
+
+        <div id="ques-view">
+        </div>
+
+        <div class="question">
+            <h1>Pergunta</h1>
+        </div>
+
+        <div class="choice">
+            <div class="options"><input type="radio" name="options" value="option1" id="opt0"><label for="opt0" id="lb0">Opção 1</label></div>
+            <div class="options"><input type="radio" name="options" value="option2" id="opt1"><label for="opt1" id="lb1">Opção 2</label></div>
+            <div class="options"><input type="radio" name="options" value="option3" checked="checked" id="opt2"><label for="opt2" id="lb2">Opção 3</label></div>
+            <div class="options"><input type="radio" name="options" value="option4" id="opt3"><label for="opt3" id="lb3">Opção 4</label></div>
+        </div>
+
+        <div class="ans-btn">
+            <button type="button" class="submit-answer">Enviar Resposta</button>
+            <a href="#display-final-score" type="button" class="view-results">Ver Resultados</a>
+        </div>
+    </div>
+
+    <div class="final-result">
+        <h1>O Quiz Acabou</h1>
+        <div class="solved-ques-no">Você resolveu 5 perguntas sobre CERRADO</div>
+        <div class="right-wrong">3 estavam Certas e 2 estavam Erradas</div>
+        <div id="display-final-score">Sua Pontuação Final é: 20</div>
+        <div class="remark">Comentário: Satisfatório, aprenda mais.</div>
+        <button id="restart">Recomeçar Quiz</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

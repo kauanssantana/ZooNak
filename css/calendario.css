@@ -1,0 +1,114 @@
+.event-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.event-slide {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle-calendar-btn, .confirm-btn {
+    background-color: #688613;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle-calendar-btn:hover, .confirm-btn:hover {
+    background-color: #557311;
+}
+
+.calendar-container {
+    margin-top: 10px;
+    display: none;
+}
+
+.datepicker {
+    margin: auto;
+    width: 100%; /* Aumentar largura para ocupar mais espaço */
+}
+
+.ui-datepicker {
+    width: 100%; /* Aumentar o tamanho do calendário */
+    background-color: #f8f9fa; /* Cor de fundo mais clara */
+    border: 1px solid #ced4da; /* Borda suave */
+    padding: 10px; /* Espaçamento interno */
+    font-family: 'Open Sans', sans-serif; /* Fonte mais moderna */
+}
+
+.ui-datepicker-header {
+    background-color: #8b4513; /* Cabeçalho com cor personalizada */
+    color: white;
+    border-bottom: 1px solid #557311;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ui-datepicker-title {
+    font-size: 1.2em;
+}
+
+.ui-datepicker th {
+    color: #495057; /* Cor do texto dos dias da semana */
+    font-weight: bold;
+}
+
+.ui-datepicker td a {
+    padding: 10px;
+    background-color: white;
+    color: #495057;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ui-datepicker td a:hover {
+    background-color: #688613;
+    color: white;
+}
+
+.ui-datepicker .ui-state-disabled {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    border-radius: 50%;
+}
+
+/* ==========================================
+   Formulário de Agendamento (Fictício)
+   ========================================== */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.booking-form input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.booking-form input:focus {
+    border-color: #436900; /* Verde tema */
+    box-shadow: 0 0 5px rgba(67, 105, 0, 0.2);
+}

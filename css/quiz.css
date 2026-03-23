@@ -1,0 +1,482 @@
+/* Reset de margin e padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navbar - Flutuante e Elegante */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    padding: 15px 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.mail {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    transition: color 0.3s;
+}
+
+.mail:hover {
+    color: #a8d16b; /* Verde clarinho ao passar o rato */
+}
+
+/* Wrapper - Ecrã Inicial Centralizado */
+#wrapper {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("banner-quiz.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Caixa com efeito Vidro Fosco (Glassmorphism) */
+#form-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilizando a Dropdown (Select) */
+#biome {
+    width: 100%;
+    min-width: 250px;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#biome:focus {
+    border-color: #436900;
+}
+
+/* Botão do Ecrã Inicial */
+.choose-lang {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: #436900;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 105, 0, 0.4);
+}
+
+.choose-lang:hover {
+    background-color: #675741;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(103, 87, 65, 0.6);
+}
+
+/*Área das Perguntas (O Quiz em si)*/
+
+.quiz {
+    display: none; /* Inicia escondido graças ao JS */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("banner-quiz2.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+}
+
+/* Crachás (Badges) Superiores de Pontuação */
+#info div {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #a8d16b;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.question h1 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-align: left;
+    line-height: 1.4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.choice {
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* Botões das Alternativas */
+.options {
+    display: block;
+    font-size: 18px;
+    margin: 15px 0;
+    padding: 15px 25px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+input[type="radio"] {
+    margin-right: 15px;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.options:hover {
+    background-color: #f0f4ea;
+    transform: translateX(5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Validação Visual das Respostas */
+.correct {
+    background-color: #2ecc71 !important;
+    color: #fff !important;
+    border: none;
+}
+
+.incorrect {
+    background-color: #e74c3c !important;
+    color: #fff !important;
+    border: none;
+}
+
+.ans-btn {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.submit-answer, .view-results {
+    background-color: #436900;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(67, 105, 0, 0.3);
+}
+
+.submit-answer:hover, .view-results:hover {
+    background-color: #675741;
+    transform: translateY(-2px);
+}
+
+/* Secção de Resultados Finais*/
+
+.final-result {
+    display: none; /* Inicia escondido graças ao JS */
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.final-result h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #436900;
+    margin-bottom: 25px;
+}
+
+.solved-ques-no,
+.right-wrong,
+#display-final-score,
+.remark {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+#display-final-score {
+    font-weight: bold;
+    color: #436900;
+    font-size: 1.5em;
+    background-color: #eef5e5;
+    border: 2px dashed #436900;
+}
+
+#restart {
+    background-color: #436900;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(67, 105, 0, 0.3);
+}
+
+#restart:hover {
+    background-color: #675741;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(103, 87, 65, 0.5);
+}
+
+/* Secção de Gabarito (Review) - Modernizado */
+
+.detailed-review {
+    margin: 40px 0 20px 0;
+    text-align: left;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px 15px 10px 5px;
+}
+
+.review-title {
+    color: #436900;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cartões Individuais das Perguntas */
+.review-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.review-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+}
+
+.review-badge {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 30px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.correct-review .review-badge {
+    background-color: #2ecc71; /* Verde */
+}
+
+.incorrect-review .review-badge {
+    background-color: #e74c3c; /* Vermelho */
+}
+
+.review-qnum {
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.review-question {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1.15em;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.review-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer-row {
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #334155;
+}
+
+.answer-label {
+    font-weight: 800;
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.success-bg {
+    background-color: #f0fdf4;
+    border-left: 5px solid #2ecc71;
+}
+
+.error-bg {
+    background-color: #fef2f2;
+    border-left: 5px solid #e74c3c;
+    color: #b91c1c;
+}
+
+/* Estiliza a barra de rolagem (Scrollbar) da área do gabarito */
+.detailed-review::-webkit-scrollbar {
+    width: 8px;
+}
+.detailed-review::-webkit-scrollbar-track {
+    background: #f1f5f9; 
+    border-radius: 10px;
+}
+.detailed-review::-webkit-scrollbar-thumb {
+    background: #cbd5e1; 
+    border-radius: 10px;
+}
+.detailed-review::-webkit-scrollbar-thumb:hover {
+    background: #436900; 
+}
+
+/* Botão de Sair do Quiz (Ícone Home)*/
+.exit-btn {
+    background-color: #e74c3c; /* Vermelho alerta */
+    color: white;
+    border: none;
+    width: 50px; /* Largura fixa */
+    height: 50px; /* Altura fixa igual à largura */
+    border-radius: 50%; /* Faz o botão ficar perfeitamente redondo */
+    font-size: 24px; /* Aumenta o tamanho do ícone */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.exit-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(192, 57, 43, 0.5);
+}
+
+
+@media (max-width: 600px) {
+    #form-box {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    .quiz {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    .ans-btn {
+        flex-direction: column;
+    }
+    .final-result {
+        padding: 30px 20px;
+        margin: 20px;
+        font-size: 1.1em;
+    }
+    #restart {
+        width: 100%;
+    }
+    nav li {
+        margin-right: 15px;
+    }
+    #info div {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+    .question h1 {
+        font-size: 24px;
+    }
+    .exit-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}

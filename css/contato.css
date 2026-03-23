@@ -1,0 +1,123 @@
+/* Estilos gerais da página de contato */
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente na tela */
+    justify-content: center;
+}
+
+/* Fundo com overlay escuro para melhorar a leitura */
+.templatemo-bg-image-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/zoologico.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Botão de voltar */
+.btn-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #fff;
+    background-color: rgba(67, 105, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn-home:hover {
+    background-color: #675741;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Container Principal */
+.main-contact-container {
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Caixa branca englobando form e mapa */
+.bg-white-box {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden; /* Faz o mapa respeitar as bordas arredondadas */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-title {
+    color: #436900;
+    font-weight: 700;
+}
+
+/* Ajustes finos do formulário e correção dos ícones apertados */
+.form-group label {
+    font-weight: 600;
+    color: #4b3b2b;
+}
+
+.input-group-text {
+    background-color: #436900;
+    color: #fff;
+    border: none;
+    /* Novas regras para centralizar os ícones e igualar larguras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px; 
+    border-radius: 5px 0 0 5px; /* Arredonda só os cantos da esquerda */
+}
+
+.form-control {
+    height: 45px; /* Força os inputs a terem a mesma altura do ícone */
+    border-radius: 0 5px 5px 0; /* Arredonda só os cantos da direita */
+}
+
+/* Garante que o campo de mensagem (textarea) possa crescer livremente */
+textarea.form-control {
+    height: auto;
+}
+
+.form-control:focus {
+    border-color: #436900;
+    box-shadow: 0 0 5px rgba(67, 105, 0, 0.5);
+}
+/* Botão de Enviar */
+.custom-btn {
+    background-color: #436900;
+    border: none;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn:hover {
+    background-color: #675741;
+    transform: translateY(-2px);
+}
+
+/* Área do Mapa */
+.map-container {
+    min-height: 500px; /* Garante altura para o mapa na versão desktop */
+}
+
+/* Responsividade para telas menores (celular) */
+@media (max-width: 991px) {
+    .btn-home {
+        top: 15px;
+        left: 15px;
+        font-size: 0.9em;
+    }
+    .map-container {
+        min-height: 350px;
+    }
+}
