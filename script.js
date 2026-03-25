@@ -1,7 +1,7 @@
 var countQues = 0;
 var lang;
 var score = 0;
-var userHistory = []; // Variável que guarda o histórico de respostas do utilizador
+var userHistory = [];
 
 var AMAZONIAquestions = [
     { question: "Qual animal é conhecido como o 'rei da Amazônia'?", choices: ["A)Onça-pintada", "B)Tucano", "C)Boto-cor-de-rosa", "D)Macaco-aranha"], answer: 1 },
@@ -58,13 +58,11 @@ var PAMPAquestions = [
     { question: "Qual é uma das plantas características da flora do Pampa?", choices: ["A) Palmeira-juçara","B) Grama-de-tapete","C) Capim-laranja","D) Araucária"], answer: 3 }
 ];
 
-// Inicialização do ecrã
 document.getElementById("score").textContent = "Pontuação: " + 0;
 document.querySelector(".view-results").style.display = "none";
 document.querySelector(".quiz").style.display = "none";
 document.querySelector(".final-result").style.display = "none";
 
-// Função utilitária para renderizar as perguntas
 function renderQuestion() {
     document.getElementById("ques-left").textContent = "Pergunta: " + (countQues + 1) + "/" + window[lang].length;
     document.querySelector(".question").innerHTML = "<h1>" + window[lang][countQues].question + "</h1>";
@@ -74,7 +72,6 @@ function renderQuestion() {
     }
 }
 
-// Evento de clique no botão de iniciar o quiz (Testar Conhecimentos)
 document.querySelector(".choose-lang").addEventListener("click", function (e) {
     e.preventDefault(); 
     
@@ -84,12 +81,10 @@ document.querySelector(".choose-lang").addEventListener("click", function (e) {
     document.querySelector(".quiz").style.display = "block"; 
     
     window.scrollTo(0, 0); 
-    renderQuestion(); // Chama a função render para popular os dados
+    renderQuestion(); 
 });
 
-// Evento de clique para enviar resposta
 document.querySelector(".submit-answer").addEventListener("click", function () {
-    // Impede erro caso clique e não tenha nada marcado
     let selectedInput = document.querySelector('input[name="options"]:checked');
     if(!selectedInput) return; 
 
@@ -97,7 +92,6 @@ document.querySelector(".submit-answer").addEventListener("click", function () {
     let correctOption = window[lang][countQues].choices[window[lang][countQues].answer - 1];
     let isCorrect = (selectedOption === correctOption);
 
-    // Salva a jogada
     userHistory.push({
         question: window[lang][countQues].question,
         userAnswer: selectedOption,
@@ -105,7 +99,6 @@ document.querySelector(".submit-answer").addEventListener("click", function () {
         isCorrect: isCorrect
     });
 
-    // Atualiza pontuação
     if (isCorrect) {
         score += 10;
         document.getElementById("ques-view").innerHTML += "<div class='ques-circle correct'>" + (countQues + 1) + "</div>";
@@ -115,17 +108,15 @@ document.querySelector(".submit-answer").addEventListener("click", function () {
     }
     document.getElementById("score").textContent = "Pontuação: " + score;
 
-    // Avança a pergunta ou finaliza
     if (countQues < window[lang].length - 1) {
         countQues++;
-        renderQuestion(); // Renderiza a próxima pergunta apenas se ela existir
+        renderQuestion(); 
     } else {
         document.querySelector(".submit-answer").style.display = "none";
         document.querySelector(".view-results").style.display = "unset";
     }
 });
 
-// Evento de clique para ver os resultados finais
 document.querySelector(".view-results").addEventListener("click", function () {
     document.querySelector(".quiz").style.display = "none"; 
     document.querySelector(".final-result").style.display = "block";
@@ -139,7 +130,6 @@ document.querySelector(".view-results").addEventListener("click", function () {
 
     document.getElementById("display-final-score").innerHTML = "Sua Pontuação Final é: " + score;
 
-    // Calcula porcentagem de acertos
     let successRate = correctCount / (countQues + 1);
 
     if (successRate > 0.8) {
@@ -152,7 +142,6 @@ document.querySelector(".view-results").addEventListener("click", function () {
         document.querySelector(".remark").innerHTML = "Comentário: Insatisfatório, tente novamente.";
     }
 
-    // ==== GERAÇÃO DO GABARITO ====
     let reviewContainer = document.getElementById("review-container");
     if (!reviewContainer) {
         reviewContainer = document.createElement("div");
@@ -170,16 +159,13 @@ document.querySelector(".view-results").addEventListener("click", function () {
 
         reviewHTML += "<div class='review-item " + statusClass + "'>";
         
-        // Cabeçalho do Cartão 
         reviewHTML += "<div class='review-header'>";
         reviewHTML += "<span class='review-badge'>" + badgeText + "</span>";
         reviewHTML += "<span class='review-qnum'>Questão " + (i + 1) + "</span>";
         reviewHTML += "</div>";
         
-        // A Pergunta
         reviewHTML += "<div class='review-question'>" + item.question + "</div>";
         
-        // As Respostas
         reviewHTML += "<div class='review-answers'>";
         if (item.isCorrect) {
             reviewHTML += "<div class='answer-row success-bg'><span class='answer-label'>Sua resposta:</span> " + item.userAnswer + "</div>";
@@ -193,19 +179,16 @@ document.querySelector(".view-results").addEventListener("click", function () {
     reviewContainer.innerHTML = reviewHTML;
 });
 
-// Evento para o botão de Sair do Quiz
 document.getElementById("exit-quiz").addEventListener("click", function () {
     if (confirm("Tem certeza que deseja sair? O seu progresso será perdido.")) {
         window.location.href = "index.html";
     }
 });
 
-// Evento para reiniciar o quiz
 document.getElementById("restart").addEventListener("click", function () {
     location.reload();
 });
 
-// Smooth Scroll
 $(document).on('click', 'a[href^="#"]', function (event) {
     if(!$(this).hasClass('choose-lang')){ 
         event.preventDefault();

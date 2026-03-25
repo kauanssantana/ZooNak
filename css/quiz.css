@@ -1,4 +1,3 @@
-/* Reset de margin e padding */
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Navbar - Flutuante e Elegante */
 nav {
     position: absolute;
     top: 0;
@@ -37,10 +35,9 @@ nav li {
 }
 
 .mail:hover {
-    color: #a8d16b; /* Verde clarinho ao passar o rato */
+    color: #a8d16b; 
 }
 
-/* Wrapper - Ecrã Inicial Centralizado */
 #wrapper {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("banner-quiz.jpg");
     background-position: center;
@@ -52,7 +49,6 @@ nav li {
     flex-direction: column;
 }
 
-/* Caixa com efeito Vidro Fosco (Glassmorphism) */
 #form-box {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -66,7 +62,6 @@ nav li {
     max-width: 400px;
 }
 
-/* Estilizando a Dropdown (Select) */
 #biome {
     width: 100%;
     min-width: 250px;
@@ -88,7 +83,6 @@ nav li {
     border-color: #436900;
 }
 
-/* Botão do Ecrã Inicial */
 .choose-lang {
     display: block;
     text-decoration: none;
@@ -110,10 +104,9 @@ nav li {
     box-shadow: 0 6px 20px rgba(103, 87, 65, 0.6);
 }
 
-/*Área das Perguntas (O Quiz em si)*/
 
 .quiz {
-    display: none; /* Inicia escondido graças ao JS */
+    display: none; 
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("banner-quiz2.jpg");
     background-position: center;
     background-size: cover;
@@ -136,7 +129,6 @@ nav li {
     flex-wrap: wrap;
 }
 
-/* Crachás (Badges) Superiores de Pontuação */
 #info div {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
@@ -166,7 +158,6 @@ nav li {
     margin: 20px 0;
 }
 
-/* Botões das Alternativas */
 .options {
     display: block;
     font-size: 18px;
@@ -193,7 +184,6 @@ input[type="radio"] {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Validação Visual das Respostas */
 .correct {
     background-color: #2ecc71 !important;
     color: #fff !important;
@@ -232,10 +222,9 @@ input[type="radio"] {
     transform: translateY(-2px);
 }
 
-/* Secção de Resultados Finais*/
 
 .final-result {
-    display: none; /* Inicia escondido graças ao JS */
+    display: none; 
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -294,7 +283,6 @@ input[type="radio"] {
     box-shadow: 0 6px 20px rgba(103, 87, 65, 0.5);
 }
 
-/* Secção de Gabarito (Review) - Modernizado */
 
 .detailed-review {
     margin: 40px 0 20px 0;
@@ -314,7 +302,6 @@ input[type="radio"] {
     letter-spacing: 1px;
 }
 
-/* Cartões Individuais das Perguntas */
 .review-item {
     margin-bottom: 20px;
     padding: 20px;
@@ -349,11 +336,11 @@ input[type="radio"] {
 }
 
 .correct-review .review-badge {
-    background-color: #2ecc71; /* Verde */
+    background-color: #2ecc71; 
 }
 
 .incorrect-review .review-badge {
-    background-color: #e74c3c; /* Vermelho */
+    background-color: #e74c3c; 
 }
 
 .review-qnum {
@@ -403,7 +390,6 @@ input[type="radio"] {
     color: #b91c1c;
 }
 
-/* Estiliza a barra de rolagem (Scrollbar) da área do gabarito */
 .detailed-review::-webkit-scrollbar {
     width: 8px;
 }
@@ -419,15 +405,14 @@ input[type="radio"] {
     background: #436900; 
 }
 
-/* Botão de Sair do Quiz (Ícone Home)*/
 .exit-btn {
-    background-color: #e74c3c; /* Vermelho alerta */
+    background-color: #e74c3c; 
     color: white;
     border: none;
-    width: 50px; /* Largura fixa */
-    height: 50px; /* Altura fixa igual à largura */
-    border-radius: 50%; /* Faz o botão ficar perfeitamente redondo */
-    font-size: 24px; /* Aumenta o tamanho do ícone */
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    font-size: 24px; 
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
     transition: all 0.3s ease;

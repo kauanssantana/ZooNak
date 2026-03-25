@@ -40,19 +40,19 @@
 
 .datepicker {
     margin: auto;
-    width: 100%; /* Aumentar largura para ocupar mais espaço */
+    width: 100%; 
 }
 
 .ui-datepicker {
-    width: 100%; /* Aumentar o tamanho do calendário */
-    background-color: #f8f9fa; /* Cor de fundo mais clara */
-    border: 1px solid #ced4da; /* Borda suave */
-    padding: 10px; /* Espaçamento interno */
-    font-family: 'Open Sans', sans-serif; /* Fonte mais moderna */
+    width: 100%; 
+    background-color: #f8f9fa; 
+    border: 1px solid #ced4da; 
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .ui-datepicker-header {
-    background-color: #8b4513; /* Cabeçalho com cor personalizada */
+    background-color: #8b4513; 
     color: white;
     border-bottom: 1px solid #557311;
     padding: 10px;
@@ -65,7 +65,7 @@
 }
 
 .ui-datepicker th {
-    color: #495057; /* Cor do texto dos dias da semana */
+    color: #495057; 
     font-weight: bold;
 }
 
@@ -87,9 +87,7 @@
     border-radius: 50%;
 }
 
-/* ==========================================
-   Formulário de Agendamento (Fictício)
-   ========================================== */
+
 .booking-form {
     display: flex;
     flex-direction: column;
@@ -109,6 +107,6 @@
 }
 
 .booking-form input:focus {
-    border-color: #436900; /* Verde tema */
+    border-color: #436900; 
     box-shadow: 0 0 5px rgba(67, 105, 0, 0.2);
 }

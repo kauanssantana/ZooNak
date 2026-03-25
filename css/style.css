@@ -1,13 +1,4 @@
-/* 
 
-Journey Template 
-http://www.templatemo.com/tm-511-journey
-
-Primary color (light blue)  : #69c6ba
-Highlight color (pink)		: #c66995
---------------------------------------
-
-*/
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 13px;
@@ -39,12 +30,12 @@ p:last-child { margin-bottom: 0; }
 .h5 {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #4b3b2b; /* Um tom mais escuro para mais contraste */
+  color: #4b3b2b; 
   font-size: 1.8em;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sutil efeito de sombra no texto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
 .quiz1 {
@@ -265,6 +256,7 @@ label { font-weight: 700; }
     display: inline-block;
 }
 
+/* CONTAINER PRINCIPAL */
 .tm-slideshow-section {
     display: -webkit-box;
     display: -webkit-flex;
@@ -274,8 +266,16 @@ label { font-weight: 700; }
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden; /* Evita vazamentos laterais */
 }
 
+/* CONTAINER INVERTIDO (Onça e Sucuri) */
 .tm-slideshow-section-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -284,19 +284,38 @@ label { font-weight: 700; }
     flex-direction: row-reverse;
 }
 
-.tm-slideshow { width: 50%; }
+.tm-slideshow { 
+    width: 50%; 
+    flex: 0 0 50%; 
+    max-width: 50%;
+    min-width: 0; 
+    position: relative;
+}
+
+.tm-slideshow img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
 
 .tm-slideshow-description {
     padding: 50px;
     color: white;
     width: 48%;
+    flex: 0 0 48%; 
+    max-width: 48%;
+    min-width: 0; 
     z-index: 100;
-    margin-left: -42px;
+    position: relative;
+    
+    margin-left: -42px; 
+    margin-right: 0;
 }
 
 .tm-slideshow-description-left {
-    margin-left: auto;
-    margin-right: -42px;    
+    margin-left: 0; 
+    margin-right: -42px; 
 }
 
 .tm-position-relative { position: relative; }
@@ -496,7 +515,7 @@ footer a:hover {
 
 #footer_content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsividade simplificada */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -517,7 +536,7 @@ footer a:hover {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
-  justify-content: center; /* Alinha centralizado */
+  justify-content: center; 
 }
 
 #footer_social_media .footer-link {
