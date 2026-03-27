@@ -365,20 +365,50 @@ label { font-weight: 700; }
     justify-content: center; 
 }
 
+/* ==========================================================================
+   RESPONSIVIDADE DAS ABAS DOS BIOMAS (Ajuste para Telemóveis)
+   ========================================================================== */
 @media (max-width: 767px) {
     .tm-tabs-links {
-        flex-direction: column;
-        align-items: stretch;
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        background-color: #8b4513; 
+        padding: 10px 5px;
+        margin-bottom: 20px;
     }
-    
+
     .tm-tab-link-li {
-        width: 100%;
-        margin-bottom: 10px;
+        width: calc(33.33% - 10px); 
+        min-width: 100px; 
+        margin: 5px; 
+        background-color: transparent;
+        flex: 0 0 auto; 
     }
-    
+
     .tm-tab-link {
         width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        padding: 15px 10px; 
+        font-size: 0.8rem; 
+        text-align: center;
+        border-radius: 8px; 
+        white-space: nowrap; 
+    }
+    
+    .tm-tab-link img {
+        max-width: 40px;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    .tm-tab-link:hover,
+    .tm-tab-link.active {
+        background-color: #675741;
     }
 }
 
@@ -731,4 +761,75 @@ footer a:hover {
     grid-template-columns: 1fr;
     padding: 2rem;
   }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE GERAL (Telemóveis e Tablets Pequenos)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. CARROSSÉIS (Animais) */
+    .tm-slideshow-section,
+    .tm-slideshow-section-reverse {
+        flex-direction: column !important; /* Obriga a imagem e o texto a empilharem-se */
+        height: auto;
+    }
+
+    .tm-slideshow {
+        width: 100% !important; /* A imagem passa a ocupar 100% da largura do telemóvel */
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    .tm-slideshow-description {
+        width: 100% !important; /* O texto passa a ocupar 100% da largura, abaixo da imagem */
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin: 0 !important; /* Remove as margens negativas usadas no desktop */
+        padding: 30px 20px !important; /* Reduz o padding para não apertar muito no telemóvel */
+        text-align: center;
+    }
+    
+    .tm-slideshow-description-left {
+        margin: 0 !important;
+    }
+
+    /* Ajuste das setas do carrossel para não ficarem fora da imagem no telemóvel */
+    .slick-prev {
+        left: 10px !important;
+        z-index: 1000;
+    }
+    
+    .slick-next {
+        right: 10px !important;
+        z-index: 1000;
+    }
+
+    /* 2. CABEÇALHO DO BANNER (Texto sobreposto) */
+    .tm-banner-title {
+        font-size: 2rem !important; /* Título mais pequeno no telemóvel */
+    }
+
+    .tm-banner-bg {
+        min-height: auto !important; 
+        padding-bottom: 180px !important; /* Espaço extra embaixo para revelar a cara da onça */
+        background-position: center center !important; /* Centraliza a imagem */
+        background-size: cover !important; /* Garante que a imagem se adapta bem à largura */
+    }
+
+    .tm-banner-subtitle {
+        font-size: 0.9rem !important; /* Fonte um bocadinho mais pequena para compactar o texto */
+        line-height: 1.5 !important;
+        padding: 0 15px; 
+    }
+
+    .tm-banner-row {
+        padding-top: 100px !important; /* Dá espaço para a barra de navegação */
+    }
+
+    /* 3. BARRA DE NAVEGAÇÃO */
+    .navbar-collapse {
+        background-color: white; /* Garante que o menu suspenso tem fundo visível */
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 }
