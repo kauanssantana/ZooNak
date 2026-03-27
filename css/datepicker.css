@@ -251,3 +251,44 @@
   margin-top: 10px;
   display: none;
 }
+
+/* =========================================
+   RESPONSIVIDADE (Tablets e Celulares)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  /* Ajusta o tamanho da secção do evento no telemóvel */
+  .event-section {
+    width: 90% !important; /* Em vez de 60%, ocupa quase o ecrã todo */
+    padding: 15px;
+    margin: 20px auto !important;
+  }
+
+  /* Garante que a imagem do evento não fique muito alta */
+  .event-image {
+    max-height: 250px;
+    object-fit: cover; /* Para não esticar a imagem de forma estranha */
+  }
+
+  /* Deixa os botões ocuparem 100% da largura e serem mais fáceis de tocar */
+  .toggle-calendar-btn, .confirm-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* Centraliza o calendário caso o utilizador abra a caixa num telemóvel */
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Se o calendário for aberto, ele ajusta-se para não vazar da tela */
+  .qs-datepicker {
+    width: 100%;
+    max-width: 300px; /* Impede que ele fique gigantesco num ecrã maior */
+    margin: 10px auto;
+    position: relative !important; /* Para não flutuar fora do sítio em telemóveis */
+  }
+}

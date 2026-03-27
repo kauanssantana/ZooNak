@@ -104,7 +104,6 @@ nav li {
     box-shadow: 0 6px 20px rgba(103, 87, 65, 0.6);
 }
 
-
 .quiz {
     display: none; 
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url("banner-quiz2.jpg");
@@ -222,7 +221,6 @@ input[type="radio"] {
     transform: translateY(-2px);
 }
 
-
 .final-result {
     display: none; 
     background-color: #ffffff;
@@ -282,7 +280,6 @@ input[type="radio"] {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(103, 87, 65, 0.5);
 }
-
 
 .detailed-review {
     margin: 40px 0 20px 0;
@@ -428,8 +425,7 @@ input[type="radio"] {
     box-shadow: 0 6px 15px rgba(192, 57, 43, 0.5);
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     #form-box {
         padding: 30px 20px;
         width: 90%;
@@ -463,5 +459,24 @@ input[type="radio"] {
         width: 45px;
         height: 45px;
         font-size: 20px;
+    }
+    .score-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .score, .ques-left {
+        width: 100%;
+        font-size: 20px; 
+        padding: 10px 0;
+    }
+    .ques-view {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    .ques-circle {
+        margin: 5px;
+        font-size: 16px;
     }
 }

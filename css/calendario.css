@@ -87,7 +87,6 @@
     border-radius: 50%;
 }
 
-
 .booking-form {
     display: flex;
     flex-direction: column;
@@ -109,4 +108,36 @@
 .booking-form input:focus {
     border-color: #436900; 
     box-shadow: 0 0 5px rgba(67, 105, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+    .event-section {
+        width: 90% !important; 
+        padding: 20px 15px !important;
+        margin-top: 30px;
+    }
+
+    .event-image {
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .toggle-calendar-btn, .confirm-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .ui-datepicker {
+        padding: 5px;
+    }
+
+    .ui-datepicker td a {
+        padding: 8px 5px;
+    }
+
+    .booking-form {
+        padding: 0;
+    }
 }

@@ -25,6 +25,7 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 100;
 }
 
 .btn-home:hover {
@@ -38,6 +39,7 @@ body {
     max-width: 1000px;
     margin-top: 50px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .bg-white-box {
@@ -51,7 +53,6 @@ body {
     color: #436900;
     font-weight: 700;
 }
-
 
 .form-group label {
     font-weight: 600;
@@ -82,6 +83,7 @@ textarea.form-control {
     border-color: #436900;
     box-shadow: 0 0 5px rgba(67, 105, 0, 0.5);
 }
+
 .custom-btn {
     background-color: #436900;
     border: none;
@@ -101,6 +103,7 @@ textarea.form-control {
     min-height: 500px; 
 }
 
+/* Responsividade para Tablets */
 @media (max-width: 991px) {
     .btn-home {
         top: 15px;
@@ -109,5 +112,51 @@ textarea.form-control {
     }
     .map-container {
         min-height: 350px;
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 767px) {
+    body {
+        /* Muda de flex para block para o formulário não ficar cortado em ecrãs pequenos */
+        display: block; 
+        padding: 20px 15px; 
+    }
+
+    .btn-home {
+        /* Deixa de flutuar e passa a ocupar o espaço normal para não sobrepor o formulário */
+        position: relative; 
+        top: 0;
+        left: 0;
+        display: inline-block;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-contact-container {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .bg-white-box {
+        border-radius: 10px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .custom-btn {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+    .map-container {
+        min-height: 250px; /* Reduz a altura do mapa no telemóvel para não ter de fazer muito scroll */
+    }
+    
+    .map-container iframe {
+        min-height: 250px !important;
     }
 }
